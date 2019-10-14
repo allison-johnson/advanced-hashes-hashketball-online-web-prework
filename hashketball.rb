@@ -161,3 +161,18 @@ def winning_team()
     info[:away][:team_name]
   end #if 
 end #method winning_team
+
+def player_with_longest_name()
+  all_players = get_all_players()
+  long_name = all_players[0][:player_name]
+  max_length = long_name.length
+  i = 1
+  while i < all_players.length do
+    if all_players[i][:player_name].length > max_length
+	  long_name = all_players[i][:player_name]
+	  max_length = long_name.length
+	end #if
+	i += 1
+  end #while
+  long_name
+end #method player_with_longest_name
