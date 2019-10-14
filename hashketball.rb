@@ -176,3 +176,24 @@ def player_with_longest_name()
   end #while
   long_name
 end #method player_with_longest_name
+
+def long_name_steals_a_ton?()
+  target_player = player_with_longest_name()
+  all_players = get_all_players()
+  max_steals = all_players[0][:steals]
+  stealer = all_players[0][:player_name]
+  i = 1
+  
+  while i < all_players.length do 
+    if all_players[i][:steals] > max_steals
+	  max_steals = all_players[i][:steals]
+	  stealer = all_players[i][:player_name]
+	end #if
+	i += 1
+  end #while
+  if stealer == target_player
+    true
+  else
+    false
+  end #end if
+end #method long_name_steals_a_ton?
