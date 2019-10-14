@@ -104,15 +104,7 @@ def player_stats(a_name)
 end #player_stats method
 
 def big_shoe_rebounds()
-  info = game_hash()
-  all_players = []
-  info[:home][:players].each do |player|
-    all_players << player
-  end #end each
-  info[:away][:players].each do |player|
-    all_players << player
-  end #end each
-  
+  all_players = get_all_players()
   max_shoe = all_players[0][:shoe]
   rebounds = 0
   i = 1
@@ -126,9 +118,13 @@ def big_shoe_rebounds()
   rebounds
 end #method big_shoe_rebounds
 
-
-
-
-
-
-
+def get_all_players()
+  info = game_hash()
+  all_players = []
+  info[:home][:players].each do |player|
+    all_players << player
+  end #end each
+  info[:away][:players].each do |player|
+    all_players << player
+  end #end each
+end #method get_all_players
