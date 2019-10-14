@@ -128,3 +128,18 @@ def get_all_players()
     all_players << player
   end #end each
 end #method get_all_players
+
+def most_points_scored()
+  all_players = get_all_players()
+  high_scorer = all_players[0][:player_name]
+  max_points = all_players[0][:points]
+  i = 1
+  while i < all_players.length do
+    if all_players[i][:points] > max_points
+	  max_points = all_players[i][:points]
+	  high_scorer = all_players[i][:player_name]
+	end #if
+	i += 1
+  end #while
+  high_scorer
+end #method most_points_scored
