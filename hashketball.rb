@@ -112,6 +112,7 @@ def get_all_players()
   info[:away][:players].each do |player|
     all_players << player
   end #end each
+  all_players
 end #method get_all_players
 
 def big_shoe_rebounds()
